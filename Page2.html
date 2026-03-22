@@ -1,157 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Family Tree</title>
+    <title>Ambiyil Family Tree</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             text-align: center;
-            background: #f0f8ff;
+            background: #f5f5f5;
         }
 
-        .tree ul {
-            padding-top: 20px;
-            position: relative;
-            display: inline-block;
+        .level {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
         }
 
-        .tree li {
-            display: inline-block;
-            text-align: center;
-            list-style-type: none;
-            position: relative;
-            padding: 20px 10px 0 10px;
-        }
-
-        /* Lines */
-        .tree li::before, .tree li::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 50%;
-            border-top: 2px solid #ccc;
-            width: 50%;
-            height: 20px;
-        }
-
-        .tree li::after {
-            right: auto;
-            left: 50%;
-            border-left: 2px solid #ccc;
-        }
-
-        .tree li:only-child::before,
-        .tree li:only-child::after {
-            display: none;
-        }
-
-        .tree li:only-child {
-            padding-top: 0;
-        }
-
-        .tree li:first-child::before,
-        .tree li:last-child::after {
-            border: none;
-        }
-
-        .tree li:last-child::before {
-            border-right: 2px solid #ccc;
-        }
-
-        .tree li:first-child::after {
-            border-radius: 5px 0 0 0;
-        }
-
-        .tree li:last-child::before {
-            border-radius: 0 5px 0 0;
-        }
-
-        .tree ul ul::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            border-left: 2px solid #ccc;
-            width: 0;
-            height: 20px;
-        }
-
-        /* Boxes */
-        .person {
-            border: 2px solid #4CAF50;
-            padding: 10px;
-            display: inline-block;
-            border-radius: 10px;
+        .box {
+            border: 2px solid black;
+            padding: 10px 15px;
+            margin: 10px;
             background: white;
-            cursor: pointer;
-            min-width: 100px;
+            border-radius: 8px;
+            font-weight: bold;
+            min-width: 120px;
+            transition: 0.3s;
         }
 
-        .person:hover {
-            background: #e0ffe0;
+        .box:hover {
+            background: lightblue;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .line {
+            width: 2px;
+            height: 30px;
+            background: black;
+            margin: auto;
+        }
+
+        .horizontal-line {
+            height: 2px;
+            background: black;
+            width: 80%;
+            margin: auto;
+        }
+
+        @media (max-width: 600px) {
+            .level {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
-
 <body>
 
-<h1>🌳 Family Tree</h1>
+    <!-- Grandparents -->
+    <div class="level">
+        <a href="sivadasan.html"><div class="box">Sivadasan × Vijaya Lekshmi</div></a>
+    </div>
 
-<div class="tree">
-    <ul>
-        <li>
-            <div class="person" onclick="go('father.html')">
-                👨 Sivadasan × 👩 Vijaya Lekshmi
-            </div>
+    <div class="line"></div>
+    <div class="horizontal-line"></div>
 
-            <ul>
-                <!-- Son 1 -->
-                <li>
-                    <div class="person" onclick="go('son1.html')">Rajesh</div>
-                    <ul>
-                        <li><div class="person" onclick="go('child1.html')">Arun</div></li>
-                        <li><div class="person" onclick="go('child2.html')">Anu</div></li>
-                    </ul>
-                </li>
+    <!-- Children -->
+    <div class="level">
+        <a href="pramod.html"><div class="box">Pramod × Divya</div></a>
+        <a href="pradeep.html"><div class="box">Pradeep × Deepa</div></a>
+        <a href="vinod.html"><div class="box">Vinod × Shiny</div></a>
+        <a href="santosh.html"><div class="box">Santosh × Aalka</div></a>
+    </div>
 
-                <!-- Son 2 -->
-                <li>
-                    <div class="person" onclick="go('son2.html')">Suresh</div>
-                    <ul>
-                        <li><div class="person" onclick="go('child3.html')">Rahul</div></li>
-                        <li><div class="person" onclick="go('child4.html')">Riya</div></li>
-                    </ul>
-                </li>
+    <div class="line"></div>
 
-                <!-- Son 3 -->
-                <li>
-                    <div class="person" onclick="go('son3.html')">Mahesh</div>
-                    <ul>
-                        <li><div class="person" onclick="go('child5.html')">Kiran</div></li>
-                        <li><div class="person" onclick="go('child6.html')">Meera</div></li>
-                    </ul>
-                </li>
+    <!-- Grandchildren -->
+    <div class="level">
+        <a href="bhavya.html"><div class="box">Bhavya</div></a>
+        <a href="jaya.html"><div class="box">Jaya</div></a>
 
-                <!-- Son 4 -->
-                <li>
-                    <div class="person" onclick="go('son4.html')">Ramesh</div>
-                    <ul>
-                        <li><div class="person" onclick="go('child7.html')">Ajay</div></li>
-                        <li><div class="person" onclick="go('child8.html')">Asha</div></li>
-                    </ul>
-                </li>
+        <a href="vidhya.html"><div class="box">Vidhya</div></a>
+        <a href="pranav.html"><div class="box">Pranav</div></a>
 
-            </ul>
-        </li>
-    </ul>
-</div>
+        <a href="asha.html"><div class="box">Asha</div></a>
+        <a href="ashwin.html"><div class="box">Ashwin</div></a>
 
-<script>
-function go(page){
-    window.location.href = page;
-}
-</script>
+        <a href="lekshmi.html"><div class="box">Lekshmi</div></a>
+        <a href="anusree.html"><div class="box">Anusree</div></a>
+    </div>
 
 </body>
 </html>

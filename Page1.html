@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Family Tree</title>
 
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f0f8ff;
+        }
+
+        .tree ul {
+            padding-top: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .tree li {
+            display: inline-block;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 10px 0 10px;
+        }
+
+        /* Lines */
+        .tree li::before, .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 2px solid #ccc;
+            width: 50%;
+            height: 20px;
+        }
+
+        .tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 2px solid #ccc;
+        }
+
+        .tree li:only-child::before,
+        .tree li:only-child::after {
+            display: none;
+        }
+
+        .tree li:only-child {
+            padding-top: 0;
+        }
+
+        .tree li:first-child::before,
+        .tree li:last-child::after {
+            border: none;
+        }
+
+        .tree li:last-child::before {
+            border-right: 2px solid #ccc;
+        }
+
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+        }
+
+        .tree li:last-child::before {
+            border-radius: 0 5px 0 0;
+        }
+
+        .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 2px solid #ccc;
+            width: 0;
+            height: 20px;
+        }
+
+        /* Boxes */
+        .person {
+            border: 2px solid #4CAF50;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            min-width: 100px;
+        }
+
+        .person:hover {
+            background: #e0ffe0;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🌳 Family Tree</h1>
+
+<div class="tree">
+    <ul>
+        <li>
+            <div class="person" onclick="go('father.html')">
+                👨 Raghavan × 👩 Lakshmi
+            </div>
+
+            <ul>
+                <!-- Son 1 -->
+                <li>
+                    <div class="person" onclick="go('son1.html')">Rajesh</div>
+                    <ul>
+                        <li><div class="person" onclick="go('child1.html')">Arun</div></li>
+                        <li><div class="person" onclick="go('child2.html')">Anu</div></li>
+                    </ul>
+                </li>
+
+                <!-- Son 2 -->
+                <li>
+                    <div class="person" onclick="go('son2.html')">Suresh</div>
+                    <ul>
+                        <li><div class="person" onclick="go('child3.html')">Rahul</div></li>
+                        <li><div class="person" onclick="go('child4.html')">Riya</div></li>
+                    </ul>
+                </li>
+
+                <!-- Son 3 -->
+                <li>
+                    <div class="person" onclick="go('son3.html')">Mahesh</div>
+                    <ul>
+                        <li><div class="person" onclick="go('child5.html')">Kiran</div></li>
+                        <li><div class="person" onclick="go('child6.html')">Meera</div></li>
+                    </ul>
+                </li>
+
+                <!-- Son 4 -->
+                <li>
+                    <div class="person" onclick="go('son4.html')">Ramesh</div>
+                    <ul>
+                        <li><div class="person" onclick="go('child7.html')">Ajay</div></li>
+                        <li><div class="person" onclick="go('child8.html')">Asha</div></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+function go(page){
+    window.location.href = page;
+}
+</script>
+
+</body>
+</html>

@@ -1,82 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Second Website</title>
+    <title>Family Tree</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #4facfe, #00f2fe);
-            color: white;
+            font-family: Arial;
             text-align: center;
-        }
-
-        header {
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            background: rgba(0,0,0,0.2);
-        }
-
-        .container {
-            margin-top: 80px;
+            background: #f4f4f4;
         }
 
         h1 {
-            font-size: 50px;
+            background: #333;
+            color: white;
+            padding: 15px;
         }
 
-        p {
-            font-size: 18px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            background: white;
-            color: #333;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #ddd;
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        .son {
+            background: #4CAF50;
+            color: white;
             padding: 10px;
-            background: rgba(0,0,0,0.2);
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .son:hover {
+            background: #45a049;
+        }
+
+        .children {
+            display: none;
+            margin: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .card {
+            margin: 5px;
+            padding: 10px;
+            background: #ddd;
+            border-radius: 5px;
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    My Website 🚀
-</header>
+<h1>👴 Grandfather: Raman Nair</h1>
 
-<div class="container">
-    <h1>Hello, I'm Ashwin 👋</h1>
-    <p>Welcome to my second website hosted on GitHub Pages!</p>
-
-    <button onclick="showMessage()">Click Me</button>
+<div class="son" onclick="toggle('son1')">👨 Son 1: Rajesh</div>
+<div id="son1" class="children">
+    <div class="card">👦 Child 1: Arun | DOB: 2005 | Age: 20 | Job: Student</div>
+    <div class="card">👧 Child 2: Anu | DOB: 2008 | Age: 17 | Job: Student</div>
 </div>
 
-<footer>
-    © 2026 My Website
-</footer>
+<div class="son" onclick="toggle('son2')">👨 Son 2: Suresh</div>
+<div id="son2" class="children">
+    <div class="card">👦 Child 1: Rahul | DOB: 2003 | Age: 22 | Job: Engineer</div>
+    <div class="card">👧 Child 2: Riya | DOB: 2007 | Age: 18 | Job: Student</div>
+</div>
+
+<div class="son" onclick="toggle('son3')">👨 Son 3: Mahesh</div>
+<div id="son3" class="children">
+    <div class="card">👦 Child 1: Kiran | DOB: 2000 | Age: 25 | Job: Doctor</div>
+    <div class="card">👧 Child 2: Meera | DOB: 2006 | Age: 19 | Job: Student</div>
+</div>
+
+<div class="son" onclick="toggle('son4')">👨 Son 4: Ramesh</div>
+<div id="son4" class="children">
+    <div class="card">👦 Child 1: Ajay | DOB: 2004 | Age: 21 | Job: Designer</div>
+    <div class="card">👧 Child 2: Asha | DOB: 2009 | Age: 16 | Job: Student</div>
+</div>
 
 <script>
-    function showMessage() {
-        alert("Welcome to my website! 🎉");
+function toggle(id) {
+    let element = document.getElementById(id);
+    if (element.style.display === "block") {
+        element.style.display = "none";
+    } else {
+        element.style.display = "block";
     }
+}
 </script>
 
 </body>

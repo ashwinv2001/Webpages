@@ -7,31 +7,35 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background: #f5f5f5;
+            padding: 20px;
         }
 
-        .level {
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .row {
             display: flex;
-            justify-content: center;
-            margin: 20px 0;
+            align-items: center;
+            margin: 25px 0;
             flex-wrap: wrap;
         }
 
         .box {
             border: 2px solid black;
             padding: 10px 15px;
-            margin: 10px;
             background: white;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: bold;
-            min-width: 120px;
+            text-align: center;
+            min-width: 140px;
             transition: 0.3s;
         }
 
         .box:hover {
             background: lightblue;
-            cursor: pointer;
         }
 
         a {
@@ -40,61 +44,78 @@
         }
 
         .line {
-            width: 2px;
-            height: 30px;
-            background: black;
-            margin: auto;
-        }
-
-        .horizontal-line {
             height: 2px;
             background: black;
-            width: 80%;
-            margin: auto;
+            flex: 1;
+            margin: 0 10px;
         }
 
+        .arrow::after {
+            content: "➜";
+            margin-left: 5px;
+        }
+
+        /* Mobile */
         @media (max-width: 600px) {
-            .level {
+            .row {
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
+            }
+
+            .line {
+                width: 2px;
+                height: 20px;
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Grandparents -->
-    <div class="level">
+<div class="container">
+
+    <!-- Top -->
+    <div class="row">
         <a href="sivadasan.html"><div class="box">Sivadasan × Vijaya Lekshmi</div></a>
     </div>
 
-    <div class="line"></div>
-    <div class="horizontal-line"></div>
-
-    <!-- Children -->
-    <div class="level">
-        <a href="pramod.html"><div class="box">Pramod × Divya</div></a>
-        <a href="pradeep.html"><div class="box">Pradeep × Deepa</div></a>
-        <a href="vinod.html"><div class="box">Vinod × Shiny</div></a>
-        <a href="santosh.html"><div class="box">Santosh × Aalka</div></a>
-    </div>
-
-    <div class="line"></div>
-
-    <!-- Grandchildren -->
-    <div class="level">
-        <a href="bhavya.html"><div class="box">Bhavya</div></a>
-        <a href="jaya.html"><div class="box">Jaya</div></a>
-
-        <a href="vidhya.html"><div class="box">Vidhya</div></a>
-        <a href="pranav.html"><div class="box">Pranav</div></a>
-
-        <a href="asha.html"><div class="box">Asha</div></a>
-        <a href="ashwin.html"><div class="box">Ashwin</div></a>
-
+    <!-- Santosh -->
+    <div class="row">
+        <a href="santosh.html"><div class="box">Santosh × Alka</div></a>
+        <div class="line arrow"></div>
+        <a href="anu.html"><div class="box">Anu</div></a>
+        <div class="line arrow"></div>
         <a href="lekshmi.html"><div class="box">Lekshmi</div></a>
-        <a href="anusree.html"><div class="box">Anusree</div></a>
     </div>
+
+    <!-- Vinod -->
+    <div class="row">
+        <a href="vinod.html"><div class="box">Vinod × Shiny</div></a>
+        <div class="line arrow"></div>
+        <a href="ashwin.html"><div class="box">Ashwin</div></a>
+        <div class="line arrow"></div>
+        <a href="asha.html"><div class="box">Asha</div></a>
+    </div>
+
+    <!-- Pradeep -->
+    <div class="row">
+        <a href="pradeep.html"><div class="box">Pradeep × Deepa</div></a>
+        <div class="line arrow"></div>
+        <a href="pranav.html"><div class="box">Pranav</div></a>
+        <div class="line arrow"></div>
+        <a href="vidhya.html"><div class="box">Vidhya</div></a>
+    </div>
+
+    <!-- Pramod -->
+    <div class="row">
+        <a href="pramod.html"><div class="box">Pramod × Divya</div></a>
+        <div class="line arrow"></div>
+        <a href="jaya.html"><div class="box">Jaya</div></a>
+        <div class="line arrow"></div>
+        <a href="bhagya.html"><div class="box">Bhagya</div></a>
+    </div>
+
+</div>
 
 </body>
 </html>
